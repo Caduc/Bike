@@ -23,7 +23,18 @@ class BobFrame(BobMadeThis):
 		self.type = type
 		self.frameweight = frameweight
 		self.framecost = framecost
-	
+'''
+tabling this idea for a bit
+class BikebyBob(BobMadeThis):
+	"""docstring for BikebyBob"""
+	def __init__(self, bobbike,):
+		self.arg = arg
+
+'''		
+
+def Costbobbike(wheelcost,):
+	pass
+
 Bob_mag_wheel = BobWheel("Mag Wheel", 32, 30)
 Bob_spoke_wheel = BobWheel("Spoke Wheel", 22, 50)
 Bob_solid_wheel = BobWheel("Solid Wheel", 12, 70)
