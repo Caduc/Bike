@@ -19,6 +19,7 @@ class BobFrame(Made_by_Bob):
 		self.type = type
 		self.frameweight = frameweight
 		self.framecost = framecost
+
 		
 
 Bob_mag_wheel = BobWheel("Mag Wheel", 32, 30)
