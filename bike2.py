@@ -38,6 +38,7 @@ class BikeModel(BikeFactory):
         self.cost = (wheel.wheel_cost * 2) + (frame.frame_cost)
         self.sell = round(self.cost * 1.6)
         self.shopsell = round(self.sell * 1.2)
+        #Anns_Cheap_Model.cost
 
 class Customer(object):
     """docstring for Customer"""
@@ -55,6 +56,15 @@ class Customer(object):
     def purchdiff(self, shopsell):
         return self.budget - shopsell
 
+class BikeShop(object):
+    """docstring for BikeShop"""
+    def __init__(self, itemnumber, Bikename, Quantity):
+        #name of the bike will be the name of the factory + "-" + the name of the bike model: Annie-Cheapy Bike
+        self.itemnumber = itemnumber
+        self.name =  Bikename.name
+        self.Quantity = Quantity
+        
+
 
 #
 #  Making bob's bikes
@@ -69,9 +79,9 @@ bob_steel_frame = Frame("Steel Frame", 64, 60)
 
 Bob = BikeFactory("Bobby")
 
-Bobs_Cheap_Model = BikeModel("Cheapy Bike", bob_mag_wheel, bob_steel_frame)
-Bobs_Mid_Model   = BikeModel(" Middy Bike", bob_spoke_wheel, bob_alum_frame)
-Bobs_Exp_Model   = BikeModel("Costly Bike", bob_solid_wheel, bob_carbon_frame)
+Bobs_Cheap_Model = BikeModel("B-Cheapy Bike", bob_mag_wheel, bob_steel_frame)
+Bobs_Mid_Model   = BikeModel("B-Middy Bike", bob_spoke_wheel, bob_alum_frame)
+Bobs_Exp_Model   = BikeModel("B-Costly Bike", bob_solid_wheel, bob_carbon_frame)
 
 #
 #  Making Ann's bikes
@@ -86,9 +96,9 @@ Ann_steel_frame = Frame("Steel Frame", 64, 80)
 
 Ann = BikeFactory("Annie")
 
-Anns_Cheap_Model = BikeModel("Cheapy Bike", Ann_mag_wheel, Ann_steel_frame)
-Anns_Mid_Model   = BikeModel(" Middy Bike", Ann_spoke_wheel, Ann_alum_frame)
-Anns_Exp_Model   = BikeModel("Costly Bike", Ann_solid_wheel, Ann_carbon_frame)
+Anns_Cheap_Model = BikeModel("A-Cheapy Bike", Ann_mag_wheel, Ann_steel_frame)
+Anns_Mid_Model   = BikeModel("A-Middy Bike", Ann_spoke_wheel, Ann_alum_frame)
+Anns_Exp_Model   = BikeModel("A-Costly Bike", Ann_solid_wheel, Ann_carbon_frame)
 
 #
 #Defining Customers
@@ -97,9 +107,11 @@ Bart = Customer("Bart", 200)
 Mike = Customer("Mike", 500)
 Angie = Customer("Angie", 1000)
 
+#
+#Defining Shop contents
+#
+Item1 = BikeShop ("Item1", Anns_Cheap_Model, 2)
 
-#def AffordableBikes():
-    # yes or no if the cost of the bike is less than the budget.
 
 if __name__ == "__main__":
     Bob.made_by()
@@ -122,8 +134,9 @@ if __name__ == "__main__":
     print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Anns_Cheap_Model.shopsell), Bart.canafford(Anns_Mid_Model.shopsell), Bart.canafford(Anns_Exp_Model.shopsell))
     print "{:>17}{:^15}{:^15}{:^15}".format("Mike Purch:",Mike.canafford(Anns_Cheap_Model.shopsell), Mike.canafford(Anns_Mid_Model.shopsell), Mike.canafford(Anns_Exp_Model.shopsell))
     print "{:>17}{:^15}{:^15}{:^15}".format("Angie Purch:",Angie.canafford(Anns_Cheap_Model.shopsell), Angie.canafford(Anns_Mid_Model.shopsell), Angie.canafford(Anns_Exp_Model.shopsell))    
-#    print "{:>17}{:^+15.0f}{:^+15.0f}{:^+15.0f}".format("Angie Diff:", Angie.purchdiff(Anns_Cheap_Model.shopsell),Angie.purchdiff(Anns_Mid_Model.shopsell), Angie.purchdiff(Anns_Exp_Model.shopsell))
+    print "{:>17}{:^+15.0f}{:^+15.0f}{:^+15.0f}".format("Angie Diff:", Angie.purchdiff(Anns_Cheap_Model.shopsell),Angie.purchdiff(Anns_Mid_Model.shopsell), Angie.purchdiff(Anns_Exp_Model.shopsell))
     print " - - - - - - "
-    print " "
+    print "{}{}{} " .format(Item1.itemnumber, Item1.name, Item1.Quantity)
+    print " - - - - - - "
 
      
