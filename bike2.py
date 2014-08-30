@@ -77,7 +77,6 @@ class AnnsBikeModel(AnnsBikeFactory):
         self.name = name
         self.weight = (wheel.wheel_weight * 2) + (frame.frame_weight)
         self.cost = (wheel.wheel_cost * 2) + (frame.frame_cost)
-        #self.sell = round(((wheel.wheel_cost * 2) + (frame.frame_cost)) * 1.6)
         self.sell = round(self.cost * 1.6)
         self.shopsell = round(self.sell * 1.2)
 
@@ -87,14 +86,23 @@ class Customer(object):
         self.customer_name = customer_name
         self.budget = budget
 
+    def canafford(self, shopsell):
+        # If budget > than shopsell print yes
+        if self.budget > shopsell: 
+            return "yes"
+        else:
+            return "no"
+
 '''
-class WrightBrothersShip(object):
-    """docstring for WrightBrothersShip"""
+class WrightBrothersSh0p(object):
+    """docstring for WrightBrothersShop"""
     def __init__(self, modelname, quantity):
         self.name = modelname.
         self.bikename = 
  '''       
 
+def function():
+    pass
 
 #
 #  Making bob's bikes
@@ -138,8 +146,8 @@ Mike = Customer("Mike", 500)
 Angie = Customer("Angie", 1000)
 
 
-def AffordableBikes():
-    pass
+#def AffordableBikes():
+    # yes or no if the cost of the bike is less than the budget.
 
 if __name__ == "__main__":
     Bob.made_by()
@@ -151,11 +159,12 @@ if __name__ == "__main__":
     print "Shop $:{:^15.0f}{:^15.0f}{:^15.0f}".format(Bobs_Cheap_Model.shopsell, Bobs_Mid_Model.shopsell, Bobs_Exp_Model.shopsell)
     Ann.made_by()
 
-    print "Name  :{:^15}{:^15}{:^15}" .format(Anns_Cheap_Model.name, Anns_Mid_Model.name, Anns_Exp_Model.name)
-    print "Weight:{:^15d}{:^15d}{:^15d}" .format(Anns_Cheap_Model.weight, Anns_Mid_Model.weight, Anns_Exp_Model.weight)
-    print "Cost  :{:^15d}{:^15d}{:^15d}" .format(Anns_Cheap_Model.cost, Anns_Mid_Model.cost, Anns_Exp_Model.cost)
-    print "Upcost:{:^15.0f}{:^15.0f}{:^15.0f}".format(Anns_Cheap_Model.sell, Anns_Mid_Model.sell, Anns_Exp_Model.sell)
-    print "Shop $:{:^15.0f}{:^15.0f}{:^15.0f}".format(Anns_Cheap_Model.shopsell, Anns_Mid_Model.shopsell, Anns_Exp_Model.shopsell)
+    print "{:>17}{:^15}{:^15}{:^15}" .format("Name:",Anns_Cheap_Model.name, Anns_Mid_Model.name, Anns_Exp_Model.name)
+    print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Weight:",Anns_Cheap_Model.weight, Anns_Mid_Model.weight, Anns_Exp_Model.weight)
+    print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Cost:",Anns_Cheap_Model.cost, Anns_Mid_Model.cost, Anns_Exp_Model.cost)
+    print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Upcost:",Anns_Cheap_Model.sell, Anns_Mid_Model.sell, Anns_Exp_Model.sell)
+    print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Shop Cost:",Anns_Cheap_Model.shopsell, Anns_Mid_Model.shopsell, Anns_Exp_Model.shopsell)
+    print "{:>17}{:^15}".format("Bart Purch:",Bart.canafford(Anns_Cheap_Model.shopsell))
     print " - - - - - - "
     print " "
 
