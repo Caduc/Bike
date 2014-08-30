@@ -43,8 +43,8 @@ class BobsBikeModel(BobsBikeFactory):
 #  Ann's bike factory definition
 #
 
-class AnnsBikeFactory(object):
-    """docstring for AnnsBikeFactory"""
+class BikeFactory(object):
+    """docstring for BikeFactory"""
     def __init__(self, name):
         self.name = name
 
@@ -53,7 +53,7 @@ class AnnsBikeFactory(object):
         print "---- This was proudly made by {} at their factory" .format(self.name)
 
 
-class AnnWheel(AnnsBikeFactory):
+class Wheel(BikeFactory):
     """docstring for Wheel"""
     def __init__(self, style, wheel_weight, wheel_cost):
         self.style = style
@@ -64,15 +64,15 @@ class AnnWheel(AnnsBikeFactory):
         print "the cost of the %s is %s" % (self.style, self.wheel_cost) 
 
 
-class AnnFrame(AnnsBikeFactory):
-    """docstring for AnnFrame"""
+class Frame(BikeFactory):
+    """docstring for Frame"""
     def __init__(self, type, frame_weight, frame_cost):
         self.type = type
         self.frame_weight = frame_weight
         self.frame_cost = frame_cost
 
-class AnnsBikeModel(AnnsBikeFactory):
-    """docstring for AnnsBikeModel"""
+class BikeModel(BikeFactory):
+    """docstring for BikeModel"""
     def __init__(self, name, wheel, frame):    
         self.name = name
         self.weight = (wheel.wheel_weight * 2) + (frame.frame_weight)
@@ -124,19 +124,19 @@ Bobs_Exp_Model   = BobsBikeModel("Costly Bike", bob_solid_wheel, bob_carbon_fram
 #
 #  Making Ann's bikes
 #
-Ann_mag_wheel = AnnWheel("Mag Wheel", 30, 33)
-Ann_spoke_wheel = AnnWheel("Spoke Wheel", 24, 40)
-Ann_solid_wheel = AnnWheel("Solid Wheel", 10, 80)
+Ann_mag_wheel = Wheel("Mag Wheel", 30, 33)
+Ann_spoke_wheel = Wheel("Spoke Wheel", 24, 40)
+Ann_solid_wheel = Wheel("Solid Wheel", 10, 80)
 
-Ann_alum_frame = AnnFrame("Aluminum Frame", 42, 120)
-Ann_carbon_frame = AnnFrame("Carbon Frame", 19, 500)
-Ann_steel_frame = AnnFrame("Steel Frame", 64, 80)  
+Ann_alum_frame = Frame("Aluminum Frame", 42, 120)
+Ann_carbon_frame = Frame("Carbon Frame", 19, 500)
+Ann_steel_frame = Frame("Steel Frame", 64, 80)  
 
-Ann = AnnsBikeFactory("Annie")
+Ann = BikeFactory("Annie")
 
-Anns_Cheap_Model = AnnsBikeModel("Cheapy Bike", Ann_mag_wheel, Ann_steel_frame)
-Anns_Mid_Model   = AnnsBikeModel(" Middy Bike", Ann_spoke_wheel, Ann_alum_frame)
-Anns_Exp_Model   = AnnsBikeModel("Costly Bike", Ann_solid_wheel, Ann_carbon_frame)
+Anns_Cheap_Model = BikeModel("Cheapy Bike", Ann_mag_wheel, Ann_steel_frame)
+Anns_Mid_Model   = BikeModel(" Middy Bike", Ann_spoke_wheel, Ann_alum_frame)
+Anns_Exp_Model   = BikeModel("Costly Bike", Ann_solid_wheel, Ann_carbon_frame)
 
 #
 #Defining Customers
