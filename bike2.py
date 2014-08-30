@@ -100,7 +100,6 @@ Angie = Customer("Angie", 1000)
 
 #def AffordableBikes():
     # yes or no if the cost of the bike is less than the budget.
-    
 
 if __name__ == "__main__":
     Bob.made_by()
