@@ -66,7 +66,7 @@ def function():
 #
 #  Making bob's bikes
 #
-bob_mag_wheel = Wheel("Mag Wheel", 32, 30)
+bob_mag_wheel = Wheel("Mag Wheel", 32, 15)
 bob_spoke_wheel = Wheel("Spoke Wheel", 23, 40)
 bob_solid_wheel = Wheel("Solid Wheel", 12, 70)
 
@@ -112,10 +112,12 @@ if __name__ == "__main__":
     Bob.made_by()
 
     print "{:>17}{:^15}{:^15}{:^15}" .format("Name:",Bobs_Cheap_Model.name, Bobs_Mid_Model.name, Bobs_Exp_Model.name)
-    print "Weight:{:^15d}{:^15d}{:^15d}" .format(Bobs_Cheap_Model.weight, Bobs_Mid_Model.weight, Bobs_Exp_Model.weight)
-    print "Cost  :{:^15d}{:^15d}{:^15d}"      .format(Bobs_Cheap_Model.cost, Bobs_Mid_Model.cost, Bobs_Exp_Model.cost)
-    print "Upcost:{:^15.0f}{:^15.0f}{:^15.0f}".format(Bobs_Cheap_Model.sell, Bobs_Mid_Model.sell, Bobs_Exp_Model.sell)
-    print "Shop $:{:^15.0f}{:^15.0f}{:^15.0f}".format(Bobs_Cheap_Model.shopsell, Bobs_Mid_Model.shopsell, Bobs_Exp_Model.shopsell)
+    print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Weight:",Bobs_Cheap_Model.weight, Bobs_Mid_Model.weight, Bobs_Exp_Model.weight)
+    print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Cost:",Bobs_Cheap_Model.cost, Bobs_Mid_Model.cost, Bobs_Exp_Model.cost)
+    print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Upcost:",Bobs_Cheap_Model.sell, Bobs_Mid_Model.sell, Bobs_Exp_Model.sell)
+    print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Shop Cost:",Bobs_Cheap_Model.shopsell, Bobs_Mid_Model.shopsell, Bobs_Exp_Model.shopsell)
+    print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Bobs_Cheap_Model.shopsell), Bart.canafford(Bobs_Mid_Model.shopsell), Bart.canafford(Bobs_Exp_Model))
+
     Ann.made_by()
 
     print "{:>17}{:^15}{:^15}{:^15}" .format("Name:",Anns_Cheap_Model.name, Anns_Mid_Model.name, Anns_Exp_Model.name)
