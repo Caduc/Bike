@@ -52,7 +52,8 @@ class Customer(object):
         else:
             return "no"
 
-    
+    def purchdiff(self, shopsell):
+        return self.budget - shopsell
 
 '''
 class WrightBrothersSh0p(object):
@@ -118,9 +119,9 @@ if __name__ == "__main__":
     print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Cost:",Bobs_Cheap_Model.cost, Bobs_Mid_Model.cost, Bobs_Exp_Model.cost)
     print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Upcost:",Bobs_Cheap_Model.sell, Bobs_Mid_Model.sell, Bobs_Exp_Model.sell)
     print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Shop Cost:",Bobs_Cheap_Model.shopsell, Bobs_Mid_Model.shopsell, Bobs_Exp_Model.shopsell)
-    print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Bobs_Cheap_Model.shopsell), Bart.canafford(Bobs_Mid_Model.shopsell), Bart.canafford(Bobs_Exp_Model))
-    print "{:>17}{:^15}{:^15}{:^15}".format("Mike Purch:",Mike.canafford(Bobs_Cheap_Model.shopsell), Mike.canafford(Bobs_Mid_Model.shopsell), Mike.canafford(Bobs_Exp_Model))
-    print "{:>17}{:^15}{:^15}{:^15}".format("Angie Purch:",Angie.canafford(Bobs_Cheap_Model.shopsell), Angie.canafford(Bobs_Mid_Model.shopsell), Angie.canafford(Bobs_Exp_Model))
+    print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Bobs_Cheap_Model.shopsell), Bart.canafford(Bobs_Mid_Model.shopsell), Bart.canafford(Bobs_Exp_Model.shopsell))
+    print "{:>17}{:^15}{:^15}{:^15}".format("Mike Purch:",Mike.canafford(Bobs_Cheap_Model.shopsell), Mike.canafford(Bobs_Mid_Model.shopsell), Mike.canafford(Bobs_Exp_Model.shopsell))
+    print "{:>17}{:^15}{:^15}{:^15}".format("Angie Purch:",Angie.canafford(Bobs_Cheap_Model.shopsell), Angie.canafford(Bobs_Mid_Model.shopsell), Angie.canafford(Bobs_Exp_Model.shopsell))
     Ann.made_by()
 
     print "{:>17}{:^15}{:^15}{:^15}" .format("Name:",Anns_Cheap_Model.name, Anns_Mid_Model.name, Anns_Exp_Model.name)
@@ -131,6 +132,7 @@ if __name__ == "__main__":
     print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Anns_Cheap_Model.shopsell), Bart.canafford(Anns_Mid_Model.shopsell), Bart.canafford(Anns_Exp_Model))
     print "{:>17}{:^15}{:^15}{:^15}".format("Mike Purch:",Mike.canafford(Anns_Cheap_Model.shopsell), Mike.canafford(Anns_Mid_Model.shopsell), Mike.canafford(Anns_Exp_Model))
     print "{:>17}{:^15}{:^15}{:^15}".format("Angie Purch:",Angie.canafford(Anns_Cheap_Model.shopsell), Angie.canafford(Anns_Mid_Model.shopsell), Angie.canafford(Anns_Exp_Model))    
+    print "{:>17}{:^+15.0f}{:^+15.0f}{:^+15.0f}".format("Angie Diff:", Angie.purchdiff(Anns_Cheap_Model.shopsell),Angie.purchdiff(Anns_Mid_Model.shopsell), Angie.purchdiff(Anns_Exp_Model.shopsell))
     print " - - - - - - "
     print " "
 
