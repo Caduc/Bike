@@ -55,23 +55,13 @@ class Customer(object):
     def purchdiff(self, shopsell):
         return self.budget - shopsell
 
-'''
-class WrightBrothersSh0p(object):
-    """docstring for WrightBrothersShop"""
-    def __init__(self, modelname, quantity):
-        self.name = modelname.
-        self.bikename = 
- '''       
-
-def function():
-    pass
 
 #
 #  Making bob's bikes
 #
 bob_mag_wheel = Wheel("Mag Wheel", 32, 15)
 bob_spoke_wheel = Wheel("Spoke Wheel", 23, 40)
-bob_solid_wheel = Wheel("Solid Wheel", 12, 70)
+bob_solid_wheel = Wheel("Solid Wheel", 12, 50)
 
 bob_alum_frame = Frame("Aluminum Frame", 44, 185)
 bob_carbon_frame = Frame("Carbon Frame", 24, 300)
@@ -88,10 +78,10 @@ Bobs_Exp_Model   = BikeModel("Costly Bike", bob_solid_wheel, bob_carbon_frame)
 #
 Ann_mag_wheel = Wheel("Mag Wheel", 30, 33)
 Ann_spoke_wheel = Wheel("Spoke Wheel", 24, 40)
-Ann_solid_wheel = Wheel("Solid Wheel", 10, 80)
+Ann_solid_wheel = Wheel("Solid Wheel", 10, 60)
 
 Ann_alum_frame = Frame("Aluminum Frame", 42, 120)
-Ann_carbon_frame = Frame("Carbon Frame", 19, 500)
+Ann_carbon_frame = Frame("Carbon Frame", 19, 400)
 Ann_steel_frame = Frame("Steel Frame", 64, 80)  
 
 Ann = BikeFactory("Annie")
@@ -129,10 +119,10 @@ if __name__ == "__main__":
     print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Cost:",Anns_Cheap_Model.cost, Anns_Mid_Model.cost, Anns_Exp_Model.cost)
     print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Upcost:",Anns_Cheap_Model.sell, Anns_Mid_Model.sell, Anns_Exp_Model.sell)
     print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Shop Cost:",Anns_Cheap_Model.shopsell, Anns_Mid_Model.shopsell, Anns_Exp_Model.shopsell)
-    print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Anns_Cheap_Model.shopsell), Bart.canafford(Anns_Mid_Model.shopsell), Bart.canafford(Anns_Exp_Model))
-    print "{:>17}{:^15}{:^15}{:^15}".format("Mike Purch:",Mike.canafford(Anns_Cheap_Model.shopsell), Mike.canafford(Anns_Mid_Model.shopsell), Mike.canafford(Anns_Exp_Model))
-    print "{:>17}{:^15}{:^15}{:^15}".format("Angie Purch:",Angie.canafford(Anns_Cheap_Model.shopsell), Angie.canafford(Anns_Mid_Model.shopsell), Angie.canafford(Anns_Exp_Model))    
-    print "{:>17}{:^+15.0f}{:^+15.0f}{:^+15.0f}".format("Angie Diff:", Angie.purchdiff(Anns_Cheap_Model.shopsell),Angie.purchdiff(Anns_Mid_Model.shopsell), Angie.purchdiff(Anns_Exp_Model.shopsell))
+    print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Anns_Cheap_Model.shopsell), Bart.canafford(Anns_Mid_Model.shopsell), Bart.canafford(Anns_Exp_Model.shopsell))
+    print "{:>17}{:^15}{:^15}{:^15}".format("Mike Purch:",Mike.canafford(Anns_Cheap_Model.shopsell), Mike.canafford(Anns_Mid_Model.shopsell), Mike.canafford(Anns_Exp_Model.shopsell))
+    print "{:>17}{:^15}{:^15}{:^15}".format("Angie Purch:",Angie.canafford(Anns_Cheap_Model.shopsell), Angie.canafford(Anns_Mid_Model.shopsell), Angie.canafford(Anns_Exp_Model.shopsell))    
+#    print "{:>17}{:^+15.0f}{:^+15.0f}{:^+15.0f}".format("Angie Diff:", Angie.purchdiff(Anns_Cheap_Model.shopsell),Angie.purchdiff(Anns_Mid_Model.shopsell), Angie.purchdiff(Anns_Exp_Model.shopsell))
     print " - - - - - - "
     print " "
 
