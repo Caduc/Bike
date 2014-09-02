@@ -63,6 +63,10 @@ class BikeShop(object):
         self.itemnumber = itemnumber
         self.name =  Bikename.name
         self.Quantity = Quantity
+
+    def soldbike(self,item):
+        # bikeshop item quantity = quantity - 1
+        self.Quantity = self.Quantity - 1
         
 
 
@@ -111,32 +115,41 @@ Angie = Customer("Angie", 1000)
 #Defining Shop contents
 #
 Item1 = BikeShop ("Item1", Anns_Cheap_Model, 2)
-
+Item2 = BikeShop ("Item2", Anns_Mid_Model, 2)
+Item3 = BikeShop ("Item3", Anns_Exp_Model, 2)
+Item4 = BikeShop ("Item4", Bobs_Cheap_Model, 2)
+Item5 = BikeShop ("Item5", Bobs_Mid_Model, 2)
+Item6 = BikeShop ("Item6", Bobs_Exp_Model, 2)
 
 if __name__ == "__main__":
     Bob.made_by()
 
-    print "{:>17}{:^15}{:^15}{:^15}" .format("Name:",Bobs_Cheap_Model.name, Bobs_Mid_Model.name, Bobs_Exp_Model.name)
-    print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Weight:",Bobs_Cheap_Model.weight, Bobs_Mid_Model.weight, Bobs_Exp_Model.weight)
-    print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Cost:",Bobs_Cheap_Model.cost, Bobs_Mid_Model.cost, Bobs_Exp_Model.cost)
-    print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Upcost:",Bobs_Cheap_Model.sell, Bobs_Mid_Model.sell, Bobs_Exp_Model.sell)
-    print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Shop Cost:",Bobs_Cheap_Model.shopsell, Bobs_Mid_Model.shopsell, Bobs_Exp_Model.shopsell)
-    print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Bobs_Cheap_Model.shopsell), Bart.canafford(Bobs_Mid_Model.shopsell), Bart.canafford(Bobs_Exp_Model.shopsell))
-    print "{:>17}{:^15}{:^15}{:^15}".format("Mike Purch:",Mike.canafford(Bobs_Cheap_Model.shopsell), Mike.canafford(Bobs_Mid_Model.shopsell), Mike.canafford(Bobs_Exp_Model.shopsell))
-    print "{:>17}{:^15}{:^15}{:^15}".format("Angie Purch:",Angie.canafford(Bobs_Cheap_Model.shopsell), Angie.canafford(Bobs_Mid_Model.shopsell), Angie.canafford(Bobs_Exp_Model.shopsell))
-    Ann.made_by()
+print "{:>17}{:^15}{:^15}{:^15}" .format("Name:",Bobs_Cheap_Model.name, Bobs_Mid_Model.name, Bobs_Exp_Model.name)
+print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Weight:",Bobs_Cheap_Model.weight, Bobs_Mid_Model.weight, Bobs_Exp_Model.weight)
+print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Cost:",Bobs_Cheap_Model.cost, Bobs_Mid_Model.cost, Bobs_Exp_Model.cost)
+print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Upcost:",Bobs_Cheap_Model.sell, Bobs_Mid_Model.sell, Bobs_Exp_Model.sell)
+print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Shop Cost:",Bobs_Cheap_Model.shopsell, Bobs_Mid_Model.shopsell, Bobs_Exp_Model.shopsell)
+print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Bobs_Cheap_Model.shopsell), Bart.canafford(Bobs_Mid_Model.shopsell), Bart.canafford(Bobs_Exp_Model.shopsell))
+print "{:>17}{:^15}{:^15}{:^15}".format("Mike Purch:",Mike.canafford(Bobs_Cheap_Model.shopsell), Mike.canafford(Bobs_Mid_Model.shopsell), Mike.canafford(Bobs_Exp_Model.shopsell))
+print "{:>17}{:^15}{:^15}{:^15}".format("Angie Purch:",Angie.canafford(Bobs_Cheap_Model.shopsell), Angie.canafford(Bobs_Mid_Model.shopsell), Angie.canafford(Bobs_Exp_Model.shopsell))
+Ann.made_by()
 
-    print "{:>17}{:^15}{:^15}{:^15}" .format("Name:",Anns_Cheap_Model.name, Anns_Mid_Model.name, Anns_Exp_Model.name)
-    print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Weight:",Anns_Cheap_Model.weight, Anns_Mid_Model.weight, Anns_Exp_Model.weight)
-    print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Cost:",Anns_Cheap_Model.cost, Anns_Mid_Model.cost, Anns_Exp_Model.cost)
-    print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Upcost:",Anns_Cheap_Model.sell, Anns_Mid_Model.sell, Anns_Exp_Model.sell)
-    print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Shop Cost:",Anns_Cheap_Model.shopsell, Anns_Mid_Model.shopsell, Anns_Exp_Model.shopsell)
-    print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Anns_Cheap_Model.shopsell), Bart.canafford(Anns_Mid_Model.shopsell), Bart.canafford(Anns_Exp_Model.shopsell))
-    print "{:>17}{:^15}{:^15}{:^15}".format("Mike Purch:",Mike.canafford(Anns_Cheap_Model.shopsell), Mike.canafford(Anns_Mid_Model.shopsell), Mike.canafford(Anns_Exp_Model.shopsell))
-    print "{:>17}{:^15}{:^15}{:^15}".format("Angie Purch:",Angie.canafford(Anns_Cheap_Model.shopsell), Angie.canafford(Anns_Mid_Model.shopsell), Angie.canafford(Anns_Exp_Model.shopsell))    
-    print "{:>17}{:^+15.0f}{:^+15.0f}{:^+15.0f}".format("Angie Diff:", Angie.purchdiff(Anns_Cheap_Model.shopsell),Angie.purchdiff(Anns_Mid_Model.shopsell), Angie.purchdiff(Anns_Exp_Model.shopsell))
-    print " - - - - - - "
-    print "{}{}{} " .format(Item1.itemnumber, Item1.name, Item1.Quantity)
-    print " - - - - - - "
+print "{:>17}{:^15}{:^15}{:^15}" .format("Name:",Anns_Cheap_Model.name, Anns_Mid_Model.name, Anns_Exp_Model.name)
+print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Weight:",Anns_Cheap_Model.weight, Anns_Mid_Model.weight, Anns_Exp_Model.weight)
+print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Cost:",Anns_Cheap_Model.cost, Anns_Mid_Model.cost, Anns_Exp_Model.cost)
+print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Upcost:",Anns_Cheap_Model.sell, Anns_Mid_Model.sell, Anns_Exp_Model.sell)
+print "{:>17}{:^15.0f}{:^15.0f}{:^15.0f}".format("Shop Cost:",Anns_Cheap_Model.shopsell, Anns_Mid_Model.shopsell, Anns_Exp_Model.shopsell)
+print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Anns_Cheap_Model.shopsell), Bart.canafford(Anns_Mid_Model.shopsell), Bart.canafford(Anns_Exp_Model.shopsell))
+print "{:>17}{:^15}{:^15}{:^15}".format("Mike Purch:",Mike.canafford(Anns_Cheap_Model.shopsell), Mike.canafford(Anns_Mid_Model.shopsell), Mike.canafford(Anns_Exp_Model.shopsell))
+print "{:>17}{:^15}{:^15}{:^15}".format("Angie Purch:",Angie.canafford(Anns_Cheap_Model.shopsell), Angie.canafford(Anns_Mid_Model.shopsell), Angie.canafford(Anns_Exp_Model.shopsell))    
+print "{:>17}{:^+15.0f}{:^+15.0f}{:^+15.0f}".format("Angie Diff:", Angie.purchdiff(Anns_Cheap_Model.shopsell),Angie.purchdiff(Anns_Mid_Model.shopsell), Angie.purchdiff(Anns_Exp_Model.shopsell))
+print " - - - - - - "
+print "{:^15}{:^15}{:^15d}" .format(Item1.itemnumber, Item1.name, Item1.Quantity)
+print " - - - - - - "
 
+Item1.soldbike
+
+print " - - - - - - "
+print "{:^15}{:^15}{:^15d}" .format(Item1.itemnumber, Item1.name, Item1.Quantity)
+print " - - - - - - "
      
