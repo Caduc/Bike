@@ -66,7 +66,7 @@ class BikeShop(object):
 
     def soldbike(self,item):
         # bikeshop item quantity = quantity - 1
-        self.Quantity = self.Quantity - 1
+        self.Quantity = self.Quantity - 4
         
 
 
@@ -114,7 +114,7 @@ Angie = Customer("Angie", 1000)
 #
 #Defining Shop contents
 #
-Item1 = BikeShop ("Item1", Anns_Cheap_Model, 2)
+Item1 = BikeShop ("Item1", Anns_Cheap_Model, 10)
 Item2 = BikeShop ("Item2", Anns_Mid_Model, 2)
 Item3 = BikeShop ("Item3", Anns_Exp_Model, 2)
 Item4 = BikeShop ("Item4", Bobs_Cheap_Model, 2)
@@ -147,9 +147,10 @@ print " - - - - - - "
 print "{:^15}{:^15}{:^15d}" .format(Item1.itemnumber, Item1.name, Item1.Quantity)
 print " - - - - - - "
 
-Item1.soldbike
+Item1.soldbike(Item1)
 
 print " - - - - - - "
 print "{:^15}{:^15}{:^15d}" .format(Item1.itemnumber, Item1.name, Item1.Quantity)
 print " - - - - - - "
      
+

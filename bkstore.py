@@ -17,6 +17,8 @@ print "{:^15}{:^15}{:^+15.0f}" .format(bike2.Item3.itemnumber, bike2.Item3.name,
 print "{:^15}{:^15}{:^+15.0f}" .format(bike2.Item4.itemnumber, bike2.Item4.name, bike2.Item4.Quantity)
 print "{:^15}{:^15}{:^+15.0f}" .format(bike2.Item5.itemnumber, bike2.Item5.name, bike2.Item5.Quantity)
 print "{:^15}{:^15}{:^+15.0f}" .format(bike2.Item6.itemnumber, bike2.Item6.name, bike2.Item6.Quantity)
-
 print ""
 print "-------------"
+
+def Sellthreebikes():
+	pass
