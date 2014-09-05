@@ -58,17 +58,30 @@ class Customer(object):
 
 class BikeShop(object):
     """docstring for BikeShop"""
-    def __init__(self, itemnumber, Bikename, Quantity):
+    def __init__(self, nameofshop):
         #name of the bike will be the name of the factory + "-" + the name of the bike model: Annie-Cheapy Bike
-        self.itemnumber = itemnumber
-        self.name =  Bikename.name
-        self.Quantity = Quantity
+        self.nameofshop = nameofshop
+        self.inventory = {}
 
-    def soldbike(self,item):
+    def addabike(self, bike, quantity):
+        details = {}
+        details["margin"] = bike.shopsell - bike.sell 
+        self.inventory[bike.name] = details 
+
+
+
+    def sellbike(self, bike):
         # bikeshop item quantity = quantity - 1
-        self.Quantity = self.Quantity - 4
+        pass
         
-
+#  bike1, bike1
+#  2,2
+#  [[bike1,2][bike2,2][bike]]
+#  Ann's cheap model
+#  Dictionary to describe the contents of the shop
+#  bikename as describe by the manufacture and the quantity and the difference of shopsell and sell
+#   with the key being the bike name.  Second dictionary with the dollar
+#  Outter dictionary has the bike name and  the inner dictionary
 
 #
 #  Making bob's bikes
@@ -114,7 +127,8 @@ Angie = Customer("Angie", 1000)
 #
 #Defining Shop contents
 #
-Item1 = BikeShop ("Item1", Anns_Cheap_Model, 10)
+Item1 = BikeShop ("Item1", Anns_Cheap_Model, 10) #BikeModel.AnnsCheap_Model---bike1 = BikeModel("A-Cheapy Bike", Ann_mag_wheel, Ann_steel_frame")
+bike1 = BikeModel("A-Cheapy Bike", Ann_mag_wheel, Ann_steel_frame)
 Item2 = BikeShop ("Item2", Anns_Mid_Model, 2)
 Item3 = BikeShop ("Item3", Anns_Exp_Model, 2)
 Item4 = BikeShop ("Item4", Bobs_Cheap_Model, 2)
@@ -123,6 +137,10 @@ Item6 = BikeShop ("Item6", Bobs_Exp_Model, 2)
 
 if __name__ == "__main__":
     Bob.made_by()
+
+#
+#    Printing output
+#   
 
 print "{:>17}{:^15}{:^15}{:^15}" .format("Name:",Bobs_Cheap_Model.name, Bobs_Mid_Model.name, Bobs_Exp_Model.name)
 print "{:>17}{:^15d}{:^15d}{:^15d}" .format("Weight:",Bobs_Cheap_Model.weight, Bobs_Mid_Model.weight, Bobs_Exp_Model.weight)
@@ -143,14 +161,20 @@ print "{:>17}{:^15}{:^15}{:^15}".format("Bart Purch:",Bart.canafford(Anns_Cheap_
 print "{:>17}{:^15}{:^15}{:^15}".format("Mike Purch:",Mike.canafford(Anns_Cheap_Model.shopsell), Mike.canafford(Anns_Mid_Model.shopsell), Mike.canafford(Anns_Exp_Model.shopsell))
 print "{:>17}{:^15}{:^15}{:^15}".format("Angie Purch:",Angie.canafford(Anns_Cheap_Model.shopsell), Angie.canafford(Anns_Mid_Model.shopsell), Angie.canafford(Anns_Exp_Model.shopsell))    
 print "{:>17}{:^+15.0f}{:^+15.0f}{:^+15.0f}".format("Angie Diff:", Angie.purchdiff(Anns_Cheap_Model.shopsell),Angie.purchdiff(Anns_Mid_Model.shopsell), Angie.purchdiff(Anns_Exp_Model.shopsell))
-print " - - - - - - "
+print " - - - - - - "                           #() indicates a function or method.  calling...  Angie should have lower case becuase instance
+                                                #func def defines inputs (these are parameters.  The items that are passed are arguments)
+                                                #access the variables using the dot
+
+
+
+
 print "{:^15}{:^15}{:^15d}" .format(Item1.itemnumber, Item1.name, Item1.Quantity)
 print " - - - - - - "
 
-Item1.soldbike(Item1)
+Item1.soldbike()
 
 print " - - - - - - "
 print "{:^15}{:^15}{:^15d}" .format(Item1.itemnumber, Item1.name, Item1.Quantity)
 print " - - - - - - "
      
-
+print bike_shop.get_bike_list()
